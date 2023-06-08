@@ -8,6 +8,8 @@ in pkgs.mkShell rec {
   venvDir = "./.venv";
   buildInputs = [
     unstable.libcs50
+    pkgs.gcc
+    pkgs.gnumake
     pythonPackages.python
     # This executes some shell code to initialize a venv in $venvDir before
     # dropping into the shell
