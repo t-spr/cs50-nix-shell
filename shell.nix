@@ -9,11 +9,15 @@ in pkgs.mkShell rec {
   buildInputs = [
     unstable.libcs50
     pkgs.gcc
+    pkgs.clang
+    pkgs.glibc
     pkgs.gnumake
+    pkgs.valgrind
     pythonPackages.python
     # This executes some shell code to initialize a venv in $venvDir before
     # dropping into the shell
     pythonPackages.venvShellHook
+    pythonPackages.pip
   ];
     
   postVenvCreation = ''
